@@ -1,259 +1,185 @@
 # Balashov Realty — Premium Real Estate Landing Page
 
-**A production-grade, fully responsive one-page real estate website built with Next.js, TypeScript, and Tailwind CSS.**
-
-Russian-language · Краснодар & Геленджик · Premium UI · Lead Generation · No backend required
+[![Next.js](https://img.shields.io/badge/Next.js-16.2-black?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
+[![License](https://img.shields.io/badge/License-Private-red)](https://github.com/Saitama4722/real-estate-platform-lp)
 
 ---
 
-## English
+## 🇬🇧 Description
 
-### What This Project Is
+A **production-grade, single-page real estate landing** built for a private realtor operating in Krasnodar and Gelendzhik, Russia. Designed to replicate the structure and visual quality of premium real estate UI templates — without third-party component libraries. Every section is hand-crafted in Tailwind CSS with a clean, conversion-focused layout.
 
-A complete, polished **premium real estate landing page** built for a professional realtor operating in Краснодар (Krasnodar) and Геленджик (Gelendzhik), Russia. The site is designed as a high-conversion, trust-first marketing presence — visually refined, fully responsive, and ready for real content drop-in once placeholder visuals are replaced with actual property photos.
+## 🇷🇺 Описание
 
-This is not a starter template or a boilerplate. It is a finished, deployment-ready **realtor landing page** with a complete section architecture, custom design system, and production-quality code.
+**Профессиональный лендинг для частного риэлтора**, работающего в Краснодаре и Геленджике. Проект воспроизводит структу��у и качество премиальных шаблонов для недвижимости — без сторонних UI-библиотек. Каждая секция написана вручную на Tailwind CSS с чистым, конверсионным дизайном.
 
-### Key Features
+---
 
-- **8 fully built sections** — Hero, Advantages, City Focus, Property Showcase, About the Realtor, How We Work, Contact, Footer
-- **Premium visual system** — custom Tailwind color palette (gold, ink, cream), Cormorant Garamond serif headlines, Inter for body text
-- **Sticky transparent header** that transitions to white on scroll, with a mobile hamburger menu
-- **City-specific panels** for Краснодар and Геленджик with individual visual identities
-- **Property showcase cards** with gradient placeholder visuals, room/area info, tags, pricing structure, and CTA
-- **About section** with a portrait placeholder area, bio copy, and a 4-point fact grid
-- **Step-by-step process section** (Как мы работаем) on a dark background
-- **Static contact form** with client-side success state — no backend required
-- **Fully in Russian** — all visible UI, microcopy, and content
-- **Responsive layout** — desktop, tablet, and mobile breakpoints
-- **SEO metadata** — title, description, Open Graph tags configured in Russian locale
-- **Zero TypeScript errors**, clean ESLint, production build verified
+## ✨ Features
 
-### Tech Stack
+| Feature | Details |
+| --- | --- |
+| **Hero section** | Split layout — headline left, search form right with Buy / Rent / Sell tabs |
+| **Trust strip** | Stat counters — deals closed, years of experience, zero commission |
+| **Property carousel** | Horizontal-scroll portrait cards with badges, price, and property meta |
+| **Category grid** | Scrollable category carousel with prev / next navigation |
+| **Services section** | Gray-background section with 3 icon cards and hover shadows |
+| **City / District carousel** | Split layout — copy left, city cards right |
+| **CTA block** | Centered 3-column cards with per-card action buttons |
+| **Featured property** | Large showcase card — image 60% / details 40% with feature chips |
+| **Agent block** | Split layout — team intro left, portrait agent carousel right |
+| **Blog** | 3-card grid with date badges and category tags |
+| **Contact form** | Google Maps iframe as background, white form card right-aligned |
+| **Footer** | Logo + social icons row, 4-column link grid, copyright bar |
+| **Responsive** | Mobile-first, fully responsive from 320 px to 1920 px |
+| **Smooth scroll** | Anchor-based single-page navigation |
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 15.3 (App Router) |
-| Language | TypeScript 5.7 (strict mode) |
-| Styling | Tailwind CSS 3.4 |
-| Fonts | Google Fonts via `next/font` — Cormorant Garamond + Inter |
-| Rendering | Static (SSG) — fully prerendered |
-| Environment | cross-env (Windows-compatible NODE_ENV handling) |
+---
 
-### Project Structure
+## 🛠 Tech Stack
 
-```
-real-estate-platform-lp/
-├── app/
-│   ├── globals.css          # Tailwind directives + all custom component classes
-│   ├── layout.tsx           # Root layout, metadata, font loading
-│   └── page.tsx             # Page composition — imports all sections
-├── components/
-│   ├── layout/
-│   │   ├── Header.tsx       # Sticky nav, scroll effect, mobile menu
-│   │   └── Footer.tsx       # Dark minimal footer
-│   └── sections/
-│       ├── Hero.tsx         # Full-height hero with animated entry and stats bar
-│       ├── Advantages.tsx   # 6 benefit cards + CTA strip
-│       ├── Cities.tsx       # Krasnodar / Gelendzhik visual panels
-│       ├── Properties.tsx   # Property cards with gradient placeholders
-│       ├── About.tsx        # Realtor bio, portrait area, key facts
-│       ├── HowWeWork.tsx    # 5-step process on dark background
-│       └── Contact.tsx      # Contact info + static frontend form
-├── next.config.ts
-├── tailwind.config.ts       # Custom gold, ink, cream color system
-├── postcss.config.js
-├── tsconfig.json
-└── package.json
+```text
+Framework     Next.js 16.2  (App Router, Turbopack)
+Language      TypeScript 5.7
+Styling       Tailwind CSS 3.4
+UI Library    React 19
+Fonts         Inter + Cormorant Garamond (Google Fonts)
+Images        Unsplash CDN
+Maps          Google Maps Embed API
+Linting       ESLint (next/core-web-vitals)
+Build tool    Turbopack (Next.js built-in)
+Deployment    Vercel
 ```
 
-### Getting Started
+---
 
-**Prerequisites:** Node.js 18 or later, npm 9 or later.
+## 📸 Preview
+
+> Add screenshots to `public/screenshots/` and uncomment the lines below.
+
+```text
+Hero section          — Dark full-screen image, split text + search card
+Property Carousel     — Tall portrait listing cards with price overlay
+Featured Property     — Large split showcase with specs grid
+Contact / Map         — Google Maps background + floating form card
+```
+
+<!-- ![Hero](public/screenshots/hero.png) -->
+<!-- ![Listings](public/screenshots/listings.png) -->
+<!-- ![Contact](public/screenshots/contact.png) -->
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js ≥ 18.17
+- npm ≥ 9
+
+### Install & Run
 
 ```bash
 # Clone the repository
 git clone https://github.com/Saitama4722/real-estate-platform-lp.git
 cd real-estate-platform-lp
 
-# Install all dependencies (including devDependencies)
-npm install --include=dev
+# Install dependencies
+npm install
 
-# Start the development server
+# Start development server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-> **Note:** If your environment has `NODE_ENV=production` set globally, the `dev` script handles this automatically via `cross-env`. The production build (`npm run build`) works in any environment.
-
-### Build & Run Commands
+### Build for Production
 
 ```bash
-# Development server with hot reload
-npm run dev
-
-# Production build (static generation)
 npm run build
-
-# Serve the production build
-npm run start
-
-# Lint the project
-npm run lint
+npm start
 ```
-
-### Customisation
-
-The project is designed to receive real content with minimal effort:
-
-**Replacing placeholder images:**
-Find sections with gradient `div` backgrounds and swap them for a Next.js `<Image>` component pointing to your own photos. All placeholder areas are clearly labelled in Russian.
-
-**Updating contact details:**
-Search for `+7 928 849-79-80` and `Владимир Балашов` — these appear in `Header.tsx`, `About.tsx`, `Contact.tsx`, and `Footer.tsx`.
-
-**Updating copy:**
-All section text is co-located in the component file. No CMS or external data layer — just edit the string directly.
-
-**Colour palette:**
-The full design token system lives in `tailwind.config.ts`. The gold accent (`#B8832E`), ink neutrals, and cream backgrounds are all centralised there.
-
-**Adding real property listings:**
-Extend the `properties` array in `components/sections/Properties.tsx` with your own data structure, or connect it to any headless CMS or data source.
 
 ---
 
-## Русский
+## 📁 Project Structure
 
-### Что это за проект
-
-Полноценный **лендинг для риэлтора** — премиальный одностраничный сайт, разработанный для работы с недвижимостью в Краснодаре и Геленджике. Сайт ориентирован на доверие и конверсию: визуально отточенный, полностью адаптивный, готовый к замене плейсхолдеров на реальные фото объектов.
-
-Это не стартовый шаблон. Это **готовый к развёртыванию сайт недвижимости** с полной архитектурой секций, собственной дизайн-системой и кодом уровня продакшна.
-
-### Основные возможности
-
-- **8 полностью реализованных секций** — Герой, Преимущества, Города, Каталог объектов, О риэлторе, Как мы работаем, Контакты, Футер
-- **Премиальная визуальная система** — кастомная палитра Tailwind (золото, ink, cream), засечный шрифт Cormorant Garamond для заголовков, Inter для текста
-- **Фиксированная прозрачная шапка**, переходящая в белую при прокрутке, с мобильным меню
-- **Отдельные блоки для Краснодара и Геленджика** с уникальной визуальной подачей каждого города
-- **Карточки объектов** с градиентными плейсхолдерами, информацией о площади и комнатах, ценой и кнопкой действия
-- **Секция «О риэлторе»** с областью для портретного фото, текстом-биографией и сеткой ключевых фактов
-- **Пошаговый процесс работы** на тёмном фоне
-- **Статичная контактная форма** с клиентским состоянием успеха — без бэкенда
-- **Весь интерфейс на русском** — включая микрокопи и мета-описания
-- **Адаптивная вёрстка** — десктоп, планшет, мобильные устройства
-- **Нулевые ошибки TypeScript**, корректный ESLint, успешная production-сборка
-
-### Технологии
-
-| Слой | Технология |
-|---|---|
-| Фреймворк | Next.js 15.3 (App Router) |
-| Язык | TypeScript 5.7 (строгий режим) |
-| Стили | Tailwind CSS 3.4 |
-| Шрифты | Google Fonts через `next/font` — Cormorant Garamond + Inter |
-| Рендеринг | Статический (SSG) — полная пре-генерация |
-| Окружение | cross-env (совместимость NODE_ENV для Windows) |
-
-### Структура проекта
-
-```
+```text
 real-estate-platform-lp/
 ├── app/
-│   ├── globals.css          # Tailwind + все кастомные компонентные классы
-│   ├── layout.tsx           # Корневой layout, метаданные, загрузка шрифтов
-│   └── page.tsx             # Страница — сборка всех секций
+│   ├── layout.tsx              # Root layout — fonts, metadata, lang="ru"
+│   ├── page.tsx                # Single-page composition
+│   └── globals.css             # Tailwind base + component utilities
 ├── components/
 │   ├── layout/
-│   │   ├── Header.tsx       # Фиксированная шапка, эффект прокрутки, мобильное меню
-│   │   └── Footer.tsx       # Минималистичный тёмный футер
+│   │   ├── Header.tsx          # Fixed nav — transparent → solid on scroll
+│   │   └── Footer.tsx          # 4-column footer with social icons
 │   └── sections/
-│       ├── Hero.tsx         # Полноэкранный герой с анимацией и статистикой
-│       ├── Advantages.tsx   # 6 карточек преимуществ + CTA-блок
-│       ├── Cities.tsx       # Визуальные панели Краснодара и Геленджика
-│       ├── Properties.tsx   # Карточки объектов с градиентными плейсхолдерами
-│       ├── About.tsx        # Биография риэлтора, портрет, ключевые факты
-│       ├── HowWeWork.tsx    # 5 шагов работы на тёмном фоне
-│       └── Contact.tsx      # Контактная информация + статичная форма
+│       ├── Hero.tsx            # Split hero + tabbed search form
+│       ├── TrustStrip.tsx      # Stat counters bar
+│       ├── PropertyCarousel.tsx  # Portrait listing cards carousel
+│       ├── CategoryGrid.tsx    # Category carousel with nav buttons
+│       ├── Services.tsx        # 3-card services on gray background
+│       ├── CityCarousel.tsx    # Split city/district section
+│       ├── CTABlock.tsx        # 3-column CTA icon cards
+│       ├── FeaturedProperty.tsx  # Hero property showcase
+│       ├── Agents.tsx          # Split agent team carousel
+│       ├── Blog.tsx            # Blog cards with date badge
+│       └── Contact.tsx         # Google Maps bg + contact form
+├── tailwind.config.ts          # Design tokens — brand / accent / gold
 ├── next.config.ts
-├── tailwind.config.ts       # Кастомная цветовая система
-├── postcss.config.js
-├── tsconfig.json
-└── package.json
+└── tsconfig.json
 ```
 
-### Как запустить
+---
 
-**Требования:** Node.js 18+, npm 9+.
+## ☁️ Deployment
+
+The project is deployed on **[Vercel](https://vercel.com/)** — zero-config, automatic builds on every push to `main`.
+
+### One-click deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Saitama4722/real-estate-platform-lp)
+
+### Via Vercel CLI
 
 ```bash
-# Клонировать репозиторий
-git clone https://github.com/Saitama4722/real-estate-platform-lp.git
-cd real-estate-platform-lp
-
-# Установить все зависимости (включая devDependencies)
-npm install --include=dev
-
-# Запустить сервер разработки
-npm run dev
+npm i -g vercel
+vercel --prod
 ```
 
-Откройте [http://localhost:3000](http://localhost:3000) в браузере.
+---
 
-> **Важно:** Если в вашем окружении глобально установлена переменная `NODE_ENV=production`, скрипт `dev` обрабатывает это автоматически через `cross-env`. Сборка (`npm run build`) работает в любом окружении.
+## 🎨 Design System
 
-### Команды разработки и сборки
-
-```bash
-# Сервер разработки с горячей перезагрузкой
-npm run dev
-
-# Production-сборка (статическая генерация)
-npm run build
-
-# Запуск production-сборки
-npm run start
-
-# Линтинг проекта
-npm run lint
-```
-
-### Как адаптировать под свой контент
-
-**Замена плейсхолдеров изображений:**
-Найдите в секциях блоки с градиентным фоном (`div` с `bg-gradient-*`) и замените на компонент `<Image>` из Next.js, указав путь к реальному фото. Все области для замены подписаны на русском языке прямо на странице.
-
-**Обновление контактных данных:**
-Найдите `+7 928 849-79-80` и `Владимир Балашов` — они упоминаются в `Header.tsx`, `About.tsx`, `Contact.tsx` и `Footer.tsx`.
-
-**Редактирование текста:**
-Все тексты секций находятся прямо в компонентных файлах — без CMS и внешних источников данных.
-
-**Цветовая схема:**
-Вся система дизайн-токенов описана в `tailwind.config.ts`. Золотой акцент (`#B8832E`), нейтральный ink и кремовый cream — всё централизовано.
-
-**Добавление реальных объектов:**
-Расширьте массив `properties` в `components/sections/Properties.tsx` своими данными или подключите любой headless CMS.
+| Token | Value | Usage |
+| --- | --- | --- |
+| `brand-900` | `#2b394c` | Primary text |
+| `brand-950` | `#1b2433` | Dark backgrounds |
+| `accent` | `#2563eb` | CTAs, links, active badges |
+| `[#f7f7f7]` | `#f7f7f7` | Alternating section backgrounds |
+| Section padding | `90 px` vertical | Consistent vertical rhythm |
+| Card radius | `12 px` (`rounded-xl`) | All card elements |
+| Button radius | `60 px` (`rounded-full`) | Pill-style CTA buttons |
 
 ---
 
-## Keywords
+## 🔍 Keywords
 
-`premium real estate landing page` · `real estate website` · `Next.js real estate landing` · `realtor landing page` · `luxury property website` · `real estate website template` · `property marketing website` · `Next.js Tailwind landing page` · `сайт недвижимости` · `landing page для недвижимости` · `сайт риэлтора` · `недвижимость Краснодар` · `недвижимость Геленджик` · `премиальный сайт недвижимости` · `одностраничный сайт недвижимости` · `сайт для агентства недвижимости`
-
----
-
-## Contact / Контакт
-
-**Author / Автор:** [@VadikQA](https://t.me/VadikQA) on Telegram
-
-Questions, feedback, or collaboration — reach out via Telegram.  
-Вопросы, обратная связь или сотрудничество — пишите в Telegram.
+`real estate website` · `property listing platform` · `real estate landing page` · `real estate UI` · `real estate Next.js` · `Next.js real estate template` · `TypeScript property site` · `Tailwind real estate` · `premium real estate template` · `single page real estate` · `Krasnodar real estate` · `Gelendzhik property` · `Russian real estate platform` · `риэлтор лендинг` · `недвижимость Next.js`
 
 ---
 
-## Repository
+## 📬 Contact
 
-[github.com/Saitama4722/real-estate-platform-lp](https://github.com/Saitama4722/real-estate-platform-lp)
+**Vladimir Balashov** — private realtor, Krasnodar & Gelendzhik
+
+- Telegram: [@VadikQA](https://t.me/VadikQA)
+- Phone: +7 928 849-79-80
+
+---
+
+Built with [Next.js](https://nextjs.org/) · Styled with [Tailwind CSS](https://tailwindcss.com/) · Deployed on [Vercel](https://vercel.com/)

@@ -9,6 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        brand: {
+          50: "#f4f7fb",
+          100: "#e8eef6",
+          200: "#cfdcea",
+          300: "#a7bdd4",
+          400: "#7a9ab8",
+          500: "#567aa0",
+          600: "#436184",
+          700: "#374f6a",
+          800: "#304258",
+          900: "#2b394c",
+          950: "#1b2433",
+        },
+        accent: {
+          DEFAULT: "#2563eb",
+          soft: "#eff6ff",
+          dark: "#1d4ed8",
+        },
         gold: {
           50:  "#FDF8EF",
           100: "#FAF0DA",
