@@ -1,49 +1,36 @@
+// TEMPORARY IMAGES — replace with real city photos when available
 const cities = [
   {
     name: "Краснодар",
-    count: "48 объектов",
-    image:
-      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=600&h=600&q=80",
+    desc: "Город для жизни и инвестиций",
+    count: "Квартиры, дома, новостройки",
+    image: "/images/cities/krd1.jfif",
   },
   {
     name: "Геленджик",
-    count: "31 объект",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&h=600&q=80",
-  },
-  {
-    name: "Анапа",
-    count: "22 объекта",
-    image:
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&h=600&q=80",
-  },
-  {
-    name: "Новороссийск",
-    count: "17 объектов",
-    image:
-      "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&h=600&q=80",
+    desc: "Недвижимость у моря",
+    count: "Апартаменты, дома, видовые объекты",
+    image: "/images/cities/gelen1.jpg",
   },
 ];
 
 export default function CityCarousel() {
   return (
-    <section className="py-[90px] bg-white">
+    <section id="cities" className="scroll-mt-28 section-padding bg-[#f9f7f4]">
       <div className="container-site">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-20">
+        <div className="flex flex-col lg:flex-row gap-14 lg:gap-16 xl:gap-20 items-center">
 
-          {/* ── Left: text + CTA ── */}
-          <div className="lg:w-[38%] xl:w-[35%] flex flex-col justify-center">
-            <h2 className="text-3xl sm:text-[2.1rem] font-semibold tracking-tight text-brand-900 leading-tight">
-              Города и районы
+          {/* ── Left: text ── */}
+          <div className="lg:w-[36%] xl:w-[33%] shrink-0">
+            <p className="eyebrow mb-4">Локации</p>
+            <h2 className="title-section text-balance">
+              Краснодар и Геленджик — два разных сценария покупки
             </h2>
-            <p className="mt-4 text-[15px] text-brand-500 leading-relaxed">
-              Работаем в ключевых локациях юга России — от делового Краснодара до курортного Геленджика. Знаем каждый район и готовы подобрать лучшее.
+            <p className="subtitle-section">
+              Подбираю объекты под вашу цель: для жизни, отдыха, переезда или инвестиций. Краснодар — для ритма города и инфраструктуры, Геленджик — для моря, статуса и курортного формата жизни.
             </p>
-            <a
-              href="#contact"
-              className="btn-outline mt-8 w-fit"
-            >
-              Все районы
+            <a href="#contact" className="btn-outline mt-9 w-fit">
+              Подобрать объект
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
@@ -51,30 +38,43 @@ export default function CityCarousel() {
           </div>
 
           {/* ── Right: city cards ── */}
-          <div className="lg:w-[62%] xl:w-[65%]">
-            <div className="flex gap-5 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="lg:flex-1 w-full">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {cities.map((city) => (
                 <a
                   key={city.name}
                   href="#contact"
-                  className="group min-w-[200px] w-[200px] sm:min-w-[220px] sm:w-[220px] lg:min-w-0 lg:flex-1 flex-shrink-0 snap-start block"
+                  className="group block"
                 >
-                  {/* Square image */}
-                  <div className="relative aspect-square overflow-hidden rounded-xl bg-brand-100 shadow-[0_4px_14px_rgba(0,0,0,0.07)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] transition-shadow duration-300">
+                  {/* Card with overlaid label */}
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-brand-200 shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:shadow-[0_18px_48px_rgba(0,0,0,0.18)] transition-shadow duration-300">
+                    {/* Photo */}
                     <div
-                      className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]"
                       style={{ backgroundImage: `url(${city.image})` }}
                       role="img"
                       aria-label={city.name}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                  </div>
-                  {/* Label */}
-                  <div className="mt-4 px-1">
-                    <h3 className="text-[15px] font-semibold text-brand-900 group-hover:text-accent transition-colors">
-                      {city.name}
-                    </h3>
-                    <p className="mt-0.5 text-[13px] text-brand-400">{city.count}</p>
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-950/75 via-brand-950/15 to-transparent" />
+
+                    {/* City name overlaid */}
+                    <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6">
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 mb-1.5">
+                        {city.desc}
+                      </p>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
+                        {city.name}
+                      </h3>
+                      <p className="mt-1.5 text-sm font-medium text-white/80">{city.count}</p>
+                    </div>
+
+                    {/* Arrow indicator */}
+                    <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </div>
                   </div>
                 </a>
               ))}

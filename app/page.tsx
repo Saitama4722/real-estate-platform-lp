@@ -2,14 +2,10 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import TrustStrip from "@/components/sections/TrustStrip";
-import PropertyCarousel from "@/components/sections/PropertyCarousel";
-import CategoryGrid from "@/components/sections/CategoryGrid";
-import Services from "@/components/sections/Services";
 import CityCarousel from "@/components/sections/CityCarousel";
-import CTABlock from "@/components/sections/CTABlock";
-import FeaturedProperty from "@/components/sections/FeaturedProperty";
+import PropertyCarousel from "@/components/sections/PropertyCarousel";
 import Agents from "@/components/sections/Agents";
-import Blog from "@/components/sections/Blog";
+import Process from "@/components/sections/Process";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -17,18 +13,22 @@ export default function Home() {
     <>
       <Header />
       <main>
+        {/* 1. Hero */}
         <Hero />
+        {/* 2. Advantages */}
         <TrustStrip />
-        <PropertyCarousel />
-        <CategoryGrid />
-        <Services />
+        {/* 3. Cities */}
         <CityCarousel />
-        <CTABlock />
-        <FeaturedProperty />
+        {/* 4. Property showcase */}
+        <PropertyCarousel />
+        {/* 5. About realtor */}
         <Agents />
-        <Blog />
+        {/* 6. Process */}
+        <Process />
+        {/* 7. Contact */}
         <Contact />
       </main>
+      {/* 8. Footer */}
       <Footer />
     </>
   );

@@ -1,79 +1,72 @@
-const agents = [
-  {
-    name: "Владимир Балашов",
-    role: "Ведущий специалист",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&h=460&q=80",
-  },
-  {
-    name: "Екатерина Морозова",
-    role: "Ипотечный консультант",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=460&q=80",
-  },
-  {
-    name: "Дмитрий Кузнецов",
-    role: "Специалист по переговорам",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=460&q=80",
-  },
-  {
-    name: "Анна Петрова",
-    role: "Менеджер показов",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=460&q=80",
-  },
+// About realtor section — Владимир Балашов
+// TEMPORARY IMAGE — replace with real portrait photo when available
+
+const PORTRAIT = "/images/agent/photo_agent.jpg";
+
+const trustItems = [
+  { value: "120+", label: "Закрытых сделок" },
+  { value: "8 лет", label: "Опыт на рынке" },
+  { value: "Под ключ", label: "Сопровождение" },
 ];
 
 export default function Agents() {
   return (
-    <section id="agents" className="py-[90px] bg-[#f7f7f7] scroll-mt-28">
+    <section id="agents" className="scroll-mt-28 section-padding bg-white">
       <div className="container-site">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.55fr] gap-12 lg:gap-16 xl:gap-20 items-center">
 
-          {/* ── Left: text + CTA ── */}
-          <div className="lg:w-[38%] xl:w-[35%] flex flex-col justify-center">
-            <h2 className="text-3xl sm:text-[2.1rem] font-semibold tracking-tight text-brand-900 leading-tight">
-              Наши специалисты
-            </h2>
-            <p className="mt-4 text-[15px] text-brand-500 leading-relaxed">
-              Работаем как единая команда — каждый отвечает за свой участок сделки. Консультация, показы, переговоры и оформление без суеты.
-            </p>
-            <a
-              href="#contact"
-              className="btn-outline mt-8 w-fit"
-            >
-              Связаться с&nbsp;нами
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
+          {/* ── Left: portrait ── */}
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+            <div className="relative aspect-[5/6] overflow-hidden rounded-2xl bg-brand-100 shadow-[0_12px_48px_rgba(0,0,0,0.12)]">
+              {/* Portrait photo */}
+              <div
+                className="absolute inset-0 bg-cover bg-top"
+                style={{ backgroundImage: `url(${PORTRAIT})` }}
+                role="img"
+                aria-label="Владимир Балашов, риэлтор"
+              />
+              {/* Subtle bottom gradient */}
+              <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-brand-950/30 to-transparent" />
+            </div>
+
+            {/* Floating stat card */}
+            <div className="absolute -bottom-5 -right-4 sm:-right-6 bg-white rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-4 sm:p-5 border border-brand-100">
+              <div className="flex gap-5 sm:gap-6">
+                {trustItems.map((t) => (
+                  <div key={t.label} className="flex flex-col items-center text-center">
+                    <span className="text-xl sm:text-2xl font-bold text-brand-900 leading-none">
+                      {t.value}
+                    </span>
+                    <span className="mt-1 text-xs font-bold uppercase tracking-widest text-brand-600 whitespace-nowrap">
+                      {t.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* ── Right: agent carousel ── */}
-          <div className="lg:w-[62%] xl:w-[65%]">
-            <div className="flex gap-5 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
-              {agents.map((agent) => (
-                <div
-                  key={agent.name}
-                  className="group min-w-[190px] w-[190px] sm:min-w-[205px] sm:w-[205px] lg:min-w-0 lg:flex-1 flex-shrink-0 snap-start"
-                >
-                  {/* Portrait photo */}
-                  <div className="relative aspect-[7/8] overflow-hidden rounded-xl bg-brand-100 shadow-[0_4px_14px_rgba(0,0,0,0.07)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.12)] transition-shadow duration-300">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-105"
-                      style={{ backgroundImage: `url(${agent.image})` }}
-                      role="img"
-                      aria-label={agent.name}
-                    />
-                  </div>
-                  {/* Info */}
-                  <div className="mt-4 px-1">
-                    <h3 className="text-[14px] font-semibold text-brand-900">{agent.name}</h3>
-                    <p className="mt-0.5 text-[13px] text-brand-400">{agent.role}</p>
-                  </div>
-                </div>
-              ))}
+          {/* ── Right: bio ── */}
+          <div className="pb-6 lg:pb-0">
+            <p className="eyebrow mb-4">О риэлторе</p>
+            <h2 className="title-section">Владимир Балашов</h2>
+            <p className="mt-2 text-base font-medium text-brand-600">
+              Специалист по недвижимости&nbsp;·&nbsp;Краснодар и Геленджик
+            </p>
+
+            {/* Bio text */}
+            <p className="mt-7 text-base text-brand-600 leading-[1.85] max-w-lg">
+              Я помогаю подобрать и купить недвижимость в Краснодаре и Геленджике, ориентируясь на ваши цели и бюджет. Предлагаю только проверенные объекты, хорошо знаю рынок и помогаю найти оптимальные варианты без переплат и лишних действий. Работаю спокойно, по делу и с фокусом на результат.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <a href="tel:+79288497980" className="btn-solid">
+                +7 928 849-79-80
+              </a>
+              <a href="#contact" className="btn-outline">
+                Оставить заявку
+              </a>
             </div>
           </div>
 

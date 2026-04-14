@@ -38,8 +38,11 @@ Thumbs.db
 *.sln
 *.sw?
 
-# Claude Code session data
+# AI session data
 .claude/
+.ai/
 
 # Vercel
 .vercel/
+
+.vercel

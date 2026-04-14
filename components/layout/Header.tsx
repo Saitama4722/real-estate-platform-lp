@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const links = [
   { href: "#hero", label: "Главная" },
   { href: "#listings", label: "Объекты" },
-  { href: "#services", label: "Услуги" },
+  { href: "#process", label: "Процесс" },
   { href: "#agents", label: "О нас" },
   { href: "#contact", label: "Контакты" },
 ];
@@ -15,19 +15,19 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const transparent = !scrolled;
+  const transparent = !scrolled && !open;
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         transparent
-          ? "bg-transparent py-4 sm:py-5"
+          ? "bg-brand-950/75 backdrop-blur-md border-b border-white/[0.07] py-4 sm:py-5"
           : "bg-white/95 backdrop-blur-md border-b border-brand-100 py-3 shadow-sm"
       }`}
     >
@@ -41,8 +41,8 @@ export default function Header() {
             Владимир Балашов
           </span>
           <span
-            className={`text-[10px] uppercase tracking-[0.2em] transition-colors ${
-              transparent ? "text-white/50" : "text-brand-400"
+            className={`text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 ${
+              transparent ? "text-white/70" : "text-brand-500"
             }`}
           >
             недвижимость на юге
@@ -54,10 +54,10 @@ export default function Header() {
             <a
               key={l.href}
               href={l.href}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition ${
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                 transparent
-                  ? "text-white/80 hover:text-white hover:bg-white/10"
-                  : "text-brand-600 hover:text-brand-900 hover:bg-brand-50"
+                  ? "text-white/90 hover:text-white hover:bg-white/10"
+                  : "text-brand-700 hover:text-brand-900 hover:bg-brand-50"
               }`}
             >
               {l.label}

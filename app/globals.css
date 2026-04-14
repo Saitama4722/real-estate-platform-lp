@@ -38,7 +38,7 @@
   }
 
   .eyebrow {
-    @apply text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-brand-400;
+    @apply text-xs font-bold uppercase tracking-widest text-brand-600;
   }
 
   .title-section {
@@ -46,7 +46,7 @@
   }
 
   .subtitle-section {
-    @apply mt-4 text-base text-brand-500 leading-relaxed max-w-2xl;
+    @apply mt-4 text-base sm:text-lg text-brand-600 leading-relaxed max-w-2xl;
   }
 
   .card-elevated {
@@ -54,19 +54,19 @@
   }
 
   .input-field {
-    @apply w-full rounded-xl border border-brand-200 bg-white px-4 py-3.5 text-sm text-brand-900 placeholder:text-brand-300
-           outline-none transition-shadow focus:border-accent focus:ring-4 focus:ring-accent/15;
+    @apply w-full rounded-xl border border-brand-200 bg-white px-4 py-3.5 text-base text-brand-900 placeholder:text-brand-300
+           outline-none transition-all duration-200 focus:border-accent focus:ring-4 focus:ring-accent/15;
   }
 
   .btn-solid {
     @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white
-           shadow-sm shadow-accent/25 transition hover:bg-accent-dark focus-visible:outline focus-visible:outline-2
+           shadow-sm shadow-accent/25 transition-all duration-200 hover:bg-accent-dark hover:shadow-accent/40 focus-visible:outline focus-visible:outline-2
            focus-visible:outline-offset-2 focus-visible:outline-accent;
   }
 
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 rounded-xl border border-brand-200 bg-white px-6 py-3.5 text-sm font-semibold
-           text-brand-800 transition hover:border-accent hover:text-accent-dark focus-visible:outline focus-visible:outline-2
+           text-brand-800 transition-all duration-200 hover:border-accent hover:bg-brand-50 hover:text-accent-dark focus-visible:outline focus-visible:outline-2
            focus-visible:outline-offset-2 focus-visible:outline-accent/40;
   }
 
@@ -122,3 +122,31 @@ select.input-field {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Ambient light paths */
+@keyframes heroDriftLight {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(10%, 5%, 0) scale(1.05); }
+}
+
+@keyframes heroDriftDark {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-10%, -5%, 0) scale(1.05); }
+}
+
+/* Horizontal slow parallax float for architectural silhouettes */
+@keyframes parallaxSlow {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-2%, 0, 0); }
+}
+
+@keyframes parallaxMid {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-4%, 0, 0); }
+}
+
+@keyframes parallaxFast {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-7%, 0, 0); }
+}
+
