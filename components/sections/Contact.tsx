@@ -121,6 +121,10 @@ export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [errorStatus, setErrorStatus] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
+  // Anti-bot: record when the form was first rendered
+  const formOpenedAt = useRef<number>(Date.now());
+  // Anti-bot: honeypot field value (must stay empty for real users)
+  const [honeypot, setHoneypot] = useState("");
 
   const isNameValid = form.name.trim().length >= 2;
   const phoneFormat = PHONE_FORMATS[country.code] ?? PHONE_FORMATS.ru;
@@ -175,20 +179,44 @@ export default function Contact() {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorStatus("");
-    
+
     if (!isMessageClean) {
       setErrorStatus("Пожалуйста, используйте корректный текст без ненормативной лексики.");
       return;
     }
-    
+
     if (!isFormValid || submitting) return;
-    
+
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 800));
-    setSubmitting(false);
-    setSent(true);
-    setForm({ name: "", message: "" });
-    setPhoneBody("");
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          client_name: form.name.trim(),
+          client_phone: `${country.prefix} ${phoneBody}`,
+          client_message: form.message.trim() || undefined,
+          source: "contact",
+          pageUrl: typeof window !== "undefined" ? window.location.href : "",
+          _hp: honeypot,
+          _t: formOpenedAt.current,
+        }),
+      });
+
+      const json = await res.json();
+
+      if (!res.ok || !json.success) {
+        throw new Error(json.error ?? "Неизвестная ошибка");
+      }
+
+      setSent(true);
+      setForm({ name: "", message: "" });
+      setPhoneBody("");
+    } catch {
+      setErrorStatus("Ошибка отправки, попробуйте ещё раз.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -247,9 +275,9 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-brand-900">Запрос отправлен</h3>
+                  <h3 className="text-lg font-semibold text-brand-900">Заявка отправлена</h3>
                   <p className="mt-2 text-sm text-brand-500 leading-relaxed max-w-[280px] mx-auto">
-                    Форма пока работает в тестовом режиме. Отправка будет подключена позже.
+                    Владимир свяжется с вами в ближайшее время.
                   </p>
                   <button
                     type="button"
@@ -275,6 +303,17 @@ export default function Contact() {
                   )}
 
                   <form onSubmit={onSubmit} className="space-y-4">
+                    {/* Honeypot — hidden from real users, filled by bots */}
+                    <input
+                      type="text"
+                      name="_hp"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      aria-hidden="true"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0, pointerEvents: "none" }}
+                    />
                     <div>
                       <label
                         className="block text-xs font-bold uppercase tracking-[0.15em] text-brand-600 mb-2"

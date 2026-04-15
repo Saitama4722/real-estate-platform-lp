@@ -33,7 +33,7 @@ export default function FeaturedProperty() {
         {/* Large feature card */}
         <article className="group grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] overflow-hidden rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.1)] bg-white">
           {/* Image — 60% width */}
-          <div className="relative min-h-[320px] lg:min-h-[480px] overflow-hidden bg-brand-100">
+          <div className="protected-image relative min-h-[320px] lg:min-h-[480px] overflow-hidden bg-brand-100">
             <div
               className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"
               style={{

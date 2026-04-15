@@ -150,3 +150,59 @@ select.input-field {
   100% { transform: translate3d(-7%, 0, 0); }
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   COPY-PROTECTION LAYER
+   Hardens against casual text copying and image saving.
+   Does NOT fully prevent extraction via DevTools, network inspection,
+   or screenshots — this is browser-side UX hardening only.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Protected marketing/content text areas */
+.protected-content {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Re-enable full usability for all form fields nested inside a protected area */
+.protected-content input,
+.protected-content textarea,
+.protected-content select,
+.protected-content [contenteditable] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* Protected image wrapper — positions a transparent overlay above the photo
+   to intercept right-click/drag at CSS level without altering visuals */
+.protected-image {
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* The transparent blocking overlay — visually invisible, breaks native drag ghost
+   on WebKit/mobile. JS listeners handle contextmenu + dragstart blocking. */
+.protected-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: transparent;
+  /* pointer-events: none so this overlay NEVER blocks clicks on badges/buttons */
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Suppresses iOS long-press image callout at the overlay level */
+  -webkit-touch-callout: none;
+}
+
+
+

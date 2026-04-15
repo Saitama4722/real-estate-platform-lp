@@ -47,7 +47,7 @@ export default function CityCarousel() {
                   className="group block"
                 >
                   {/* Card with overlaid label */}
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-brand-200 shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:shadow-[0_18px_48px_rgba(0,0,0,0.18)] transition-shadow duration-300">
+                  <div className="protected-image relative aspect-[3/4] overflow-hidden rounded-2xl bg-brand-200 shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:shadow-[0_18px_48px_rgba(0,0,0,0.18)] transition-shadow duration-300">
                     {/* Photo */}
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]"
@@ -76,6 +76,7 @@ export default function CityCarousel() {
                       </svg>
                     </div>
                   </div>
+
                 </a>
               ))}
             </div>

@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ProtectedMain from "@/components/layout/ProtectedMain";
 import Hero from "@/components/sections/Hero";
 import TrustStrip from "@/components/sections/TrustStrip";
 import CityCarousel from "@/components/sections/CityCarousel";
@@ -12,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <ProtectedMain>
         {/* 1. Hero */}
         <Hero />
         {/* 2. Advantages */}
@@ -27,9 +28,10 @@ export default function Home() {
         <Process />
         {/* 7. Contact */}
         <Contact />
-      </main>
+      </ProtectedMain>
       {/* 8. Footer */}
       <Footer />
     </>
   );
 }
+

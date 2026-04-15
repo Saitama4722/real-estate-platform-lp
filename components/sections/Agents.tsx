@@ -17,7 +17,7 @@ export default function Agents() {
 
           {/* ── Left: portrait ── */}
           <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
-            <div className="relative aspect-[5/6] overflow-hidden rounded-2xl bg-brand-100 shadow-[0_12px_48px_rgba(0,0,0,0.12)]">
+            <div className="protected-image relative aspect-[5/6] overflow-hidden rounded-2xl bg-brand-100 shadow-[0_12px_48px_rgba(0,0,0,0.12)]">
               {/* Portrait photo */}
               <div
                 className="absolute inset-0 bg-cover bg-top"

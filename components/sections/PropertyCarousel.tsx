@@ -86,7 +86,7 @@ export default function PropertyCarousel() {
               className="group min-w-[260px] w-[260px] sm:min-w-[280px] sm:w-[280px] flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-white border border-brand-100 shadow-[0_4px_20px_rgba(0,0,0,0.07)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.13)] transition-all duration-300"
             >
               {/* Image */}
-              <div className="relative aspect-[4/5] overflow-hidden bg-brand-100">
+              <div className="protected-image relative aspect-[4/5] overflow-hidden bg-brand-100">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]"
                   style={{ backgroundImage: `url(${item.image})` }}
