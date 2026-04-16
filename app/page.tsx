@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ProtectedMain from "@/components/layout/ProtectedMain";
@@ -31,6 +32,16 @@ export default function Home() {
       </ProtectedMain>
       {/* 8. Footer */}
       <Footer />
+
+      {/* Envybox callback widget — homepage only */}
+      <Script
+        src="https://cdn.envybox.io/widget/cbk.js?wcb_code=fd4c8cb90c73babb288d0fe0bd5889b1"
+        strategy="afterInteractive"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.envybox.io/widget/cbk.css"
+      />
     </>
   );
 }
