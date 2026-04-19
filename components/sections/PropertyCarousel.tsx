@@ -54,20 +54,20 @@ function HeartIcon() {
 
 export default function PropertyCarousel() {
   return (
-    <section id="listings" className="scroll-mt-28 section-padding bg-white">
+    <section id="listings" className="scroll-mt-28 section-padding bg-cream-50">
       {/* Section header */}
-      <div className="container-site mb-10">
+      <div className="container-site mb-12">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <p className="eyebrow mb-3">Объекты</p>
             <h2 className="title-section">Избранные объекты</h2>
-            <p className="mt-3 text-base text-brand-600">
+            <p className="mt-4 text-base text-ink-500">
               Актуальные предложения в&nbsp;Краснодаре и&nbsp;Геленджике
             </p>
           </div>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-dark transition-colors duration-200 shrink-0 pb-1"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-gold-DEFAULT hover:text-gold-500 transition-colors duration-200 shrink-0 pb-1"
           >
             Запросить всё
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -83,22 +83,22 @@ export default function PropertyCarousel() {
           {listings.map((item) => (
             <article
               key={item.id}
-              className="group min-w-[260px] w-[260px] sm:min-w-[280px] sm:w-[280px] flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-white border border-brand-100 shadow-[0_4px_20px_rgba(0,0,0,0.07)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.13)] transition-all duration-300"
+              className="group min-w-[270px] w-[270px] sm:min-w-[290px] sm:w-[290px] flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-white border border-cream-200 shadow-[0_4px_24px_rgba(17,24,39,0.07)] hover:shadow-[0_16px_56px_rgba(17,24,39,0.14)] hover:-translate-y-1 transition-all duration-300"
             >
               {/* Image */}
-              <div className="protected-image relative aspect-[4/5] overflow-hidden bg-brand-100">
+              <div className="protected-image relative aspect-[4/5] overflow-hidden bg-cream-200">
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.05]"
                   style={{ backgroundImage: `url(${item.image})` }}
                   role="img"
                   aria-label={item.title}
                 />
-                {/* Gradient overlay at bottom */}
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
+                {/* Dark gradient */}
+                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink-950/60 to-transparent" />
 
-                {/* Badge */}
+                {/* Gold price badge */}
                 <div className="absolute top-3.5 left-3.5">
-                  <span className="inline-flex bg-accent text-white text-xs font-bold uppercase tracking-[0.1em] px-2.5 py-1 leading-none rounded">
+                  <span className="inline-flex bg-gold-gradient text-white text-xs font-bold uppercase tracking-[0.12em] px-3 py-1.5 leading-none rounded-full shadow-lg">
                     {item.badge}
                   </span>
                 </div>
@@ -107,12 +107,12 @@ export default function PropertyCarousel() {
                 <button
                   type="button"
                   aria-label="В избранное"
-                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-brand-400 hover:text-accent hover:bg-white transition-all duration-200 shadow-sm"
+                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-ink-400 hover:text-gold-DEFAULT hover:bg-white transition-all duration-200 shadow-sm"
                 >
                   <HeartIcon />
                 </button>
 
-                {/* City tag bottom */}
+                {/* City tag */}
                 <div className="absolute bottom-3.5 left-3.5">
                   <span className="text-xs font-bold text-white/90 uppercase tracking-wider drop-shadow-md">
                     {item.city}
@@ -121,20 +121,20 @@ export default function PropertyCarousel() {
               </div>
 
               {/* Card body */}
-              <div className="p-4 sm:p-5">
-                <h3 className="text-base font-semibold text-brand-900 leading-snug group-hover:text-accent transition-colors duration-200 line-clamp-2">
+              <div className="p-5">
+                <h3 className="font-serif text-lg font-semibold text-ink-900 leading-snug group-hover:text-gold-DEFAULT transition-colors duration-200 line-clamp-2">
                   {item.title}
                 </h3>
-                <div className="mt-2.5 flex items-center gap-3 text-sm text-brand-600 font-medium">
+                <div className="mt-2.5 flex items-center gap-3 text-sm text-ink-500 font-medium">
                   <span>{item.rooms}</span>
-                  <span className="w-1 h-1 rounded-full bg-brand-200" />
+                  <span className="w-1 h-1 rounded-full bg-gold-DEFAULT/40" />
                   <span>{item.area}</span>
                 </div>
-                <div className="mt-3 pt-3 border-t border-brand-100 flex items-center justify-between">
-                  <span className="text-lg font-bold text-brand-900">{item.price}</span>
+                <div className="mt-4 pt-4 border-t border-cream-200 flex items-center justify-between">
+                  <span className="font-serif text-xl font-bold text-ink-900">{item.price}</span>
                   <a
                     href="#contact"
-                    className="text-sm font-semibold text-accent hover:text-accent-dark transition-colors duration-200"
+                    className="text-sm font-semibold text-gold-DEFAULT hover:text-gold-500 transition-colors duration-200"
                   >
                     Подробнее →
                   </a>

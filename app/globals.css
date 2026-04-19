@@ -15,12 +15,12 @@
   }
 
   body {
-    @apply bg-white text-brand-900 antialiased;
+    @apply bg-cream-50 text-ink-900 antialiased;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   }
 
   ::selection {
-    @apply bg-accent-soft text-brand-900;
+    @apply bg-gold-200 text-ink-900;
   }
 
   * {
@@ -38,36 +38,49 @@
   }
 
   .eyebrow {
-    @apply text-xs font-bold uppercase tracking-widest text-brand-600;
+    @apply text-xs font-bold uppercase tracking-[0.25em] text-gold-500;
   }
 
   .title-section {
-    @apply font-sans text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold tracking-tight text-brand-900 leading-tight;
+    @apply font-serif text-4xl sm:text-5xl lg:text-[3rem] font-semibold tracking-tight text-ink-900 leading-[1.1];
   }
 
   .subtitle-section {
-    @apply mt-4 text-base sm:text-lg text-brand-600 leading-relaxed max-w-2xl;
+    @apply mt-5 text-base sm:text-lg text-ink-500 leading-relaxed max-w-2xl;
   }
 
   .card-elevated {
-    @apply bg-white rounded-2xl border border-brand-100 shadow-[0_18px_50px_-24px_rgba(15,23,42,0.12)];
+    @apply bg-white rounded-2xl border border-cream-200 shadow-[0_8px_40px_-8px_rgba(17,24,39,0.10)];
   }
 
   .input-field {
-    @apply w-full rounded-xl border border-brand-200 bg-white px-4 py-3.5 text-base text-brand-900 placeholder:text-brand-300
-           outline-none transition-all duration-200 focus:border-accent focus:ring-4 focus:ring-accent/15;
+    @apply w-full rounded-xl border border-cream-300 bg-white px-4 py-3.5 text-base text-ink-900 placeholder:text-ink-400
+           outline-none transition-all duration-200 focus:border-gold-400 focus:ring-4 focus:ring-gold-200/50;
   }
 
   .btn-solid {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white
-           shadow-sm shadow-accent/25 transition-all duration-200 hover:bg-accent-dark hover:shadow-accent/40 focus-visible:outline focus-visible:outline-2
-           focus-visible:outline-offset-2 focus-visible:outline-accent;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white
+           tracking-wide transition-all duration-300
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+    background-color: #B8832E;
+    box-shadow: 0 4px 20px -4px rgba(184,131,46,0.45);
+  }
+  .btn-solid:hover {
+    background-color: #C9943A;
+    box-shadow: 0 8px 28px -4px rgba(184,131,46,0.55);
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-brand-200 bg-white px-6 py-3.5 text-sm font-semibold
-           text-brand-800 transition-all duration-200 hover:border-accent hover:bg-brand-50 hover:text-accent-dark focus-visible:outline focus-visible:outline-2
-           focus-visible:outline-offset-2 focus-visible:outline-accent/40;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border bg-transparent px-7 py-3.5 text-sm font-semibold
+           tracking-wide transition-all duration-300
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+    border-color: #B8832E;
+    color: #B8832E;
+  }
+  .btn-outline:hover {
+    background-color: #B8832E;
+    color: #ffffff;
+    box-shadow: 0 4px 20px -4px rgba(184,131,46,0.35);
   }
 
   .scrollbar-hide::-webkit-scrollbar {
@@ -84,7 +97,6 @@
     text-wrap: balance;
   }
 
-  /* Line clamp utilities */
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -103,7 +115,7 @@
 select.input-field {
   -webkit-appearance: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9943A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   padding-right: 40px;
@@ -113,14 +125,14 @@ select.input-field {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #f7f4ef;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #ddd5c8;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #C9943A;
 }
 
 /* Ambient light paths */
@@ -134,7 +146,6 @@ select.input-field {
   100% { transform: translate3d(-10%, -5%, 0) scale(1.05); }
 }
 
-/* Horizontal slow parallax float for architectural silhouettes */
 @keyframes parallaxSlow {
   0% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-2%, 0, 0); }
@@ -152,12 +163,8 @@ select.input-field {
 
 /* ─────────────────────────────────────────────────────────────────────────────
    COPY-PROTECTION LAYER
-   Hardens against casual text copying and image saving.
-   Does NOT fully prevent extraction via DevTools, network inspection,
-   or screenshots — this is browser-side UX hardening only.
    ───────────────────────────────────────────────────────────────────────────── */
 
-/* Protected marketing/content text areas */
 .protected-content {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -167,7 +174,6 @@ select.input-field {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Re-enable full usability for all form fields nested inside a protected area */
 .protected-content input,
 .protected-content textarea,
 .protected-content select,
@@ -179,8 +185,6 @@ select.input-field {
   -webkit-touch-callout: default;
 }
 
-/* Protected image wrapper — positions a transparent overlay above the photo
-   to intercept right-click/drag at CSS level without altering visuals */
 .protected-image {
   position: relative;
   -webkit-user-select: none;
@@ -188,21 +192,14 @@ select.input-field {
   -webkit-touch-callout: none;
 }
 
-/* The transparent blocking overlay — visually invisible, breaks native drag ghost
-   on WebKit/mobile. JS listeners handle contextmenu + dragstart blocking. */
 .protected-image::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 5;
   background: transparent;
-  /* pointer-events: none so this overlay NEVER blocks clicks on badges/buttons */
   pointer-events: none;
   -webkit-user-select: none;
   user-select: none;
-  /* Suppresses iOS long-press image callout at the overlay level */
   -webkit-touch-callout: none;
 }
-
-
-

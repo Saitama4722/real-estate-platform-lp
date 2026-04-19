@@ -49,20 +49,23 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-950 text-white border-t border-white/[0.06]">
+    <footer className="bg-ink-950 text-white border-t border-gold-DEFAULT/10">
       <div className="container-site">
 
         {/* ── Top row: logo + social ── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 py-7 border-b border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 py-8 border-b border-white/[0.06]">
           {/* Logo */}
           <a href="#hero" className="flex flex-col">
-            <span className="text-base font-semibold tracking-tight">
+            <span className="font-serif text-xl font-semibold tracking-tight text-white">
               Владимир Балашов
             </span>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60 mt-1">
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/70 mt-1.5">
               недвижимость на юге
             </span>
           </a>
+
+          {/* Gold divider */}
+          <div className="hidden sm:block w-px h-10 bg-gold-DEFAULT/20" />
 
           {/* Social icons */}
           <div className="flex items-center gap-3">
@@ -71,7 +74,7 @@ export default function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="w-10 h-10 rounded-full border border-white/15 bg-white/5 flex items-center justify-center text-white/70 hover:bg-accent hover:border-accent hover:text-white transition-all duration-200"
+                className="w-10 h-10 rounded-full border border-gold-DEFAULT/20 bg-white/[0.04] flex items-center justify-center text-white/50 hover:bg-gold-DEFAULT hover:border-gold-DEFAULT hover:text-white transition-all duration-300"
               >
                 <Icon />
               </a>
@@ -84,13 +87,13 @@ export default function Footer() {
 
           {/* Popular Search */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-5">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80 mb-6">
               Популярные запросы
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {popularSearch.map((item) => (
                 <li key={item}>
-                  <a href="#contact" className="text-sm text-white/70 hover:text-white transition-colors duration-200 leading-tight block">
+                  <a href="#contact" className="text-sm text-white/50 hover:text-gold-300 transition-colors duration-200 leading-tight block">
                     {item}
                   </a>
                 </li>
@@ -100,13 +103,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-5">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80 mb-6">
               Быстрые ссылки
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-white/70 hover:text-white transition-colors duration-200 leading-tight block">
+                  <a href={link.href} className="text-sm text-white/50 hover:text-gold-300 transition-colors duration-200 leading-tight block">
                     {link.label}
                   </a>
                 </li>
@@ -116,13 +119,13 @@ export default function Footer() {
 
           {/* Discover */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-5">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80 mb-6">
               Районы
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {discover.map((d) => (
                 <li key={d.label}>
-                  <a href={d.href} className="text-sm text-white/70 hover:text-white transition-colors duration-200 leading-tight block">
+                  <a href={d.href} className="text-sm text-white/50 hover:text-gold-300 transition-colors duration-200 leading-tight block">
                     {d.label}
                   </a>
                 </li>
@@ -132,24 +135,24 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-5">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80 mb-6">
               Контакты
             </h4>
-            <div className="space-y-4">
+            <div className="space-y-5">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-1.5">Телефон</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-2">Телефон</p>
                 <a
                   href="tel:+79288497980"
-                  className="text-base font-semibold text-white/90 hover:text-accent transition-colors duration-200"
+                  className="font-serif text-lg font-semibold text-white/85 hover:text-gold-300 transition-colors duration-200"
                 >
                   +7 928 849-79-80
                 </a>
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-1.5">Почта</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-2">Почта</p>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="text-sm text-white/70 hover:text-white transition-colors duration-200 break-all"
+                  className="text-sm text-white/50 hover:text-gold-300 transition-colors duration-200 break-all"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -160,11 +163,11 @@ export default function Footer() {
         </div>
 
         {/* ── Copyright bar ── */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/10 py-6">
-          <p className="text-xs text-white/60">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/[0.06] py-6">
+          <p className="text-xs text-white/35">
             © {year} Владимир Балашов. Все права защищены.
           </p>
-          <p className="text-xs text-white/50">
+          <p className="text-xs text-white/25">
             Недвижимость в Краснодаре и Геленджике
           </p>
         </div>

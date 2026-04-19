@@ -27,24 +27,16 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         transparent
-          ? "bg-brand-950/75 backdrop-blur-md border-b border-white/[0.07] py-4 sm:py-5"
-          : "bg-white/95 backdrop-blur-md border-b border-brand-100 py-3 shadow-sm"
+          ? "bg-ink-950/80 backdrop-blur-md border-b border-gold-DEFAULT/10 py-4 sm:py-5"
+          : "bg-ink-900/98 backdrop-blur-md border-b border-gold-DEFAULT/15 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
       }`}
     >
       <div className="container-site flex items-center justify-between gap-6">
         <a href="#hero" className="flex flex-col min-w-0">
-          <span
-            className={`font-sans text-base sm:text-lg font-semibold tracking-tight truncate transition-colors ${
-              transparent ? "text-white" : "text-brand-900"
-            }`}
-          >
+          <span className="font-serif text-lg sm:text-xl font-semibold tracking-tight text-white truncate">
             Владимир Балашов
           </span>
-          <span
-            className={`text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 ${
-              transparent ? "text-white/70" : "text-brand-500"
-            }`}
-          >
+          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80">
             недвижимость на юге
           </span>
         </a>
@@ -54,11 +46,7 @@ export default function Header() {
             <a
               key={l.href}
               href={l.href}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                transparent
-                  ? "text-white/90 hover:text-white hover:bg-white/10"
-                  : "text-brand-700 hover:text-brand-900 hover:bg-brand-50"
-              }`}
+              className="px-4 py-2 text-sm font-medium text-white/75 hover:text-white hover:bg-white/[0.07] rounded-lg transition-all duration-200 tracking-wide"
             >
               {l.label}
             </a>
@@ -68,9 +56,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href="tel:+79288497980"
-            className={`hidden md:inline-flex text-sm font-semibold transition ${
-              transparent ? "text-white hover:text-white/80" : "text-brand-900 hover:text-accent"
-            }`}
+            className="hidden md:inline-flex text-sm font-semibold text-white/80 hover:text-gold-300 transition-colors duration-200"
           >
             +7 928 849-79-80
           </a>
@@ -79,9 +65,7 @@ export default function Header() {
           </a>
           <button
             type="button"
-            className={`lg:hidden rounded-lg p-2 transition ${
-              transparent ? "text-white hover:bg-white/10" : "text-brand-900 hover:bg-brand-50"
-            }`}
+            className="lg:hidden rounded-lg p-2 text-white/80 hover:bg-white/10 transition"
             aria-label="Меню"
             onClick={() => setOpen((v) => !v)}
           >
@@ -99,7 +83,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`lg:hidden overflow-hidden bg-white border-t border-brand-100 transition-all duration-300 ${
+        className={`lg:hidden overflow-hidden bg-ink-900 border-t border-gold-DEFAULT/10 transition-all duration-300 ${
           open ? "max-h-80 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
@@ -109,7 +93,7 @@ export default function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="px-4 py-3 text-sm font-medium text-brand-800 hover:bg-brand-50 rounded-lg"
+              className="px-4 py-3 text-sm font-medium text-white/80 hover:text-white hover:bg-white/[0.07] rounded-lg transition-all duration-200"
             >
               {l.label}
             </a>
