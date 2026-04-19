@@ -11,17 +11,16 @@ const popularSearch = [
 ];
 
 const quickLinks = [
-  { label: "Главная", href: "/" },
-  { label: "Политика конфиденциальности", href: "/privacy" },
-  { label: "Пользовательское соглашение", href: "/terms" },
-  { label: "Процесс", href: "/#process" },
-  { label: "Контакты", href: "/#contact" },
+  { label: "Главная",                        href: "/" },
+  { label: "Политика конфиденциальности",    href: "/privacy" },
+  { label: "Пользовательское соглашение",    href: "/terms" },
+  { label: "Процесс",                        href: "/#process" },
+  { label: "Контакты",                       href: "/#contact" },
 ];
 
-// Cities in scope: Краснодар и Геленджик only
 const discover = [
-  { label: "Краснодар", href: "#contact" },
-  { label: "Геленджик", href: "#contact" },
+  { label: "Краснодар",  href: "#contact" },
+  { label: "Геленджик",  href: "#contact" },
 ];
 
 function IconTg() {
@@ -41,8 +40,8 @@ function IconWa() {
 }
 
 const socials = [
-  { label: "Telegram", Icon: IconTg, href: "#" },
-  { label: "WhatsApp", Icon: IconWa, href: "#" },
+  { label: "Telegram",  Icon: IconTg, href: "#" },
+  { label: "WhatsApp",  Icon: IconWa, href: "#" },
 ];
 
 export default function Footer() {
@@ -50,31 +49,43 @@ export default function Footer() {
 
   return (
     <footer className="bg-ink-950 text-white border-t border-gold-DEFAULT/10">
-      <div className="container-site">
 
-        {/* ── Top row: logo + social ── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 py-8 border-b border-white/[0.06]">
+      {/* ── Top brand bar ── */}
+      <div className="container-site">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 py-10 border-b border-white/[0.05]">
+
           {/* Logo */}
-          <a href="#hero" className="flex flex-col">
-            <span className="font-serif text-xl font-semibold tracking-tight text-white">
+          <a href="#hero" className="flex flex-col cursor-pointer group">
+            <span className="font-serif text-lg sm:text-xl font-semibold tracking-[0.12em] uppercase text-white group-hover:text-gold-300 transition-colors duration-300">
               Владимир Балашов
             </span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/70 mt-1.5">
+            <span
+              className="text-[9px] font-bold uppercase tracking-[0.4em] text-gold-400/60 mt-1.5"
+              style={{ fontFamily: "var(--font-josefin)" }}
+            >
               недвижимость на юге
             </span>
           </a>
 
-          {/* Gold divider */}
-          <div className="hidden sm:block w-px h-10 bg-gold-DEFAULT/20" />
+          {/* Gold separator */}
+          <div className="hidden sm:flex items-center gap-6">
+            <div className="w-px h-10 bg-gradient-to-b from-transparent via-gold-DEFAULT/30 to-transparent" />
+            <p
+              className="text-xs text-white/35 tracking-[0.1em] uppercase max-w-[200px] leading-relaxed"
+              style={{ fontFamily: "var(--font-josefin)" }}
+            >
+              Краснодар · Геленджик
+            </p>
+          </div>
 
           {/* Social icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             {socials.map(({ label, Icon, href }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
-                className="w-10 h-10 rounded-full border border-gold-DEFAULT/20 bg-white/[0.04] flex items-center justify-center text-white/50 hover:bg-gold-DEFAULT hover:border-gold-DEFAULT hover:text-white transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-gold-DEFAULT/20 bg-white/[0.03] flex items-center justify-center text-white/40 hover:bg-teal-DEFAULT hover:border-teal-DEFAULT hover:text-white transition-all duration-300 cursor-pointer"
               >
                 <Icon />
               </a>
@@ -83,17 +94,24 @@ export default function Footer() {
         </div>
 
         {/* ── Main columns ── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-10 pt-12 pb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 pt-12 pb-10">
 
           {/* Popular Search */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80 mb-6">
+            <h4
+              className="text-[9px] font-bold uppercase tracking-[0.35em] text-gold-400/70 mb-7"
+              style={{ fontFamily: "var(--font-josefin)" }}
+            >
               Популярные запросы
             </h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-4">
               {popularSearch.map((item) => (
                 <li key={item}>
-                  <a href="#contact" className="text-sm text-white/50 hover:text-gold-300 transition-colors duration-200 leading-tight block">
+                  <a
+                    href="#contact"
+                    className="text-xs text-white/40 hover:text-gold-300 transition-colors duration-200 leading-tight block tracking-[0.04em] cursor-pointer"
+                    style={{ fontFamily: "var(--font-josefin)" }}
+                  >
                     {item}
                   </a>
                 </li>
@@ -103,13 +121,20 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80 mb-6">
+            <h4
+              className="text-[9px] font-bold uppercase tracking-[0.35em] text-gold-400/70 mb-7"
+              style={{ fontFamily: "var(--font-josefin)" }}
+            >
               Быстрые ссылки
             </h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-white/50 hover:text-gold-300 transition-colors duration-200 leading-tight block">
+                  <a
+                    href={link.href}
+                    className="text-xs text-white/40 hover:text-gold-300 transition-colors duration-200 leading-tight block tracking-[0.04em] cursor-pointer"
+                    style={{ fontFamily: "var(--font-josefin)" }}
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -119,13 +144,20 @@ export default function Footer() {
 
           {/* Discover */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80 mb-6">
+            <h4
+              className="text-[9px] font-bold uppercase tracking-[0.35em] text-gold-400/70 mb-7"
+              style={{ fontFamily: "var(--font-josefin)" }}
+            >
               Районы
             </h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-4">
               {discover.map((d) => (
                 <li key={d.label}>
-                  <a href={d.href} className="text-sm text-white/50 hover:text-gold-300 transition-colors duration-200 leading-tight block">
+                  <a
+                    href={d.href}
+                    className="text-xs text-white/40 hover:text-gold-300 transition-colors duration-200 leading-tight block tracking-[0.04em] cursor-pointer"
+                    style={{ fontFamily: "var(--font-josefin)" }}
+                  >
                     {d.label}
                   </a>
                 </li>
@@ -135,24 +167,38 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/80 mb-6">
+            <h4
+              className="text-[9px] font-bold uppercase tracking-[0.35em] text-gold-400/70 mb-7"
+              style={{ fontFamily: "var(--font-josefin)" }}
+            >
               Контакты
             </h4>
-            <div className="space-y-5">
+            <div className="space-y-6">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-2">Телефон</p>
+                <p
+                  className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/25 mb-2"
+                  style={{ fontFamily: "var(--font-josefin)" }}
+                >
+                  Телефон
+                </p>
                 <a
                   href="tel:+79288497980"
-                  className="font-serif text-lg font-semibold text-white/85 hover:text-gold-300 transition-colors duration-200"
+                  className="font-serif text-base font-semibold text-white/80 hover:text-gold-300 transition-colors duration-200 tracking-wide cursor-pointer"
                 >
                   +7 928 849-79-80
                 </a>
               </div>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-2">Почта</p>
+                <p
+                  className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/25 mb-2"
+                  style={{ fontFamily: "var(--font-josefin)" }}
+                >
+                  Почта
+                </p>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="text-sm text-white/50 hover:text-gold-300 transition-colors duration-200 break-all"
+                  className="text-xs text-white/40 hover:text-gold-300 transition-colors duration-200 break-all cursor-pointer"
+                  style={{ fontFamily: "var(--font-josefin)" }}
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -163,15 +209,20 @@ export default function Footer() {
         </div>
 
         {/* ── Copyright bar ── */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/[0.06] py-6">
-          <p className="text-xs text-white/35">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/[0.05] py-6">
+          <p
+            className="text-[10px] text-white/25 tracking-[0.1em] uppercase"
+            style={{ fontFamily: "var(--font-josefin)" }}
+          >
             © {year} Владимир Балашов. Все права защищены.
           </p>
-          <p className="text-xs text-white/25">
+          <p
+            className="text-[10px] text-white/18 tracking-[0.1em] uppercase"
+            style={{ fontFamily: "var(--font-josefin)" }}
+          >
             Недвижимость в Краснодаре и Геленджике
           </p>
         </div>
-
       </div>
     </footer>
   );

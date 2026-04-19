@@ -25,22 +25,28 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="scroll-mt-28 section-padding bg-cream-50">
-      <div className="container-site">
+    <section id="process" className="scroll-mt-28 section-padding bg-ink-900 relative overflow-hidden">
+
+      {/* Subtle background dots */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle,#c9a84c_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" aria-hidden />
+
+      <div className="container-site relative z-10">
 
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 sm:mb-20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-20 sm:mb-24">
           <div className="max-w-lg">
-            <p className="eyebrow mb-4">
-              Процесс
-            </p>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3rem] font-semibold tracking-tight text-ink-900 leading-[1.1]">
+            <p className="eyebrow mb-6">Процесс</p>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] font-semibold tracking-tight text-white leading-[1.05]">
               Как мы работаем
             </h2>
           </div>
-          <a href="#contact" className="shrink-0 inline-flex items-center gap-2 text-sm font-semibold text-gold-DEFAULT hover:text-gold-500 transition-colors duration-200">
+          <a
+            href="#contact"
+            className="shrink-0 inline-flex items-center gap-2 text-xs font-semibold text-gold-400 hover:text-gold-300 transition-colors duration-200 tracking-[0.15em] uppercase cursor-pointer"
+            style={{ fontFamily: "var(--font-josefin)" }}
+          >
             Начать сейчас
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
           </a>
@@ -48,25 +54,37 @@ export default function Process() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connector line */}
+          {/* Horizontal connector line */}
           <div
-            className="hidden lg:block absolute top-[28px] left-[calc(12.5%-1rem)] right-[calc(12.5%-1rem)] h-px bg-gold-DEFAULT/20"
+            className="hidden lg:block absolute top-[1.6rem] left-[12.5%] right-[12.5%] h-px"
+            style={{ background: "linear-gradient(to right, transparent, rgba(184,131,46,0.25) 20%, rgba(184,131,46,0.25) 80%, transparent)" }}
             aria-hidden
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-            {steps.map((step) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            {steps.map((step, i) => (
               <div key={step.number} className="flex flex-col group">
-                {/* Step circle */}
-                <div className="relative z-10 w-14 h-14 rounded-full border border-gold-DEFAULT/30 bg-cream-50 shadow-[0_0_0_4px_rgba(201,164,76,0.07)] flex items-center justify-center mb-8 shrink-0 group-hover:border-gold-DEFAULT group-hover:shadow-[0_0_0_6px_rgba(201,164,76,0.10)] transition-all duration-300">
-                  <span className="font-serif text-base font-bold text-gold-DEFAULT">{step.number}</span>
+
+                {/* Step number circle */}
+                <div className="relative z-10 w-14 h-14 rounded-full border border-gold-DEFAULT/25 bg-ink-900 shadow-[0_0_0_5px_rgba(184,131,46,0.05)] flex items-center justify-center mb-8 shrink-0 group-hover:border-gold-DEFAULT group-hover:shadow-[0_0_30px_-4px_rgba(184,131,46,0.3)] transition-all duration-400">
+                  <span className="font-serif text-sm font-bold text-gold-400 tracking-[0.05em] group-hover:text-gold-300 transition-colors duration-200">
+                    {step.number}
+                  </span>
                 </div>
 
-                {/* Content */}
-                <h3 className="font-serif text-xl font-semibold text-ink-900 mb-3 leading-snug">
+                {/* Teal accent line on hover */}
+                <div className="w-6 h-px bg-teal-DEFAULT/0 group-hover:bg-teal-400/60 group-hover:w-8 transition-all duration-300 mb-5" />
+
+                {/* Title */}
+                <h3 className="font-serif text-xl font-semibold text-white mb-4 leading-snug tracking-wide group-hover:text-gold-200 transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="text-base text-ink-500 leading-[1.8] flex-1">
+
+                {/* Text */}
+                <p
+                  className="text-sm text-ink-400/90 leading-[1.9] flex-1 tracking-[0.02em]"
+                  style={{ fontFamily: "var(--font-josefin)", fontWeight: 300 }}
+                >
                   {step.text}
                 </p>
               </div>
