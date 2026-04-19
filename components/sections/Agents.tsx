@@ -17,7 +17,7 @@ export default function Agents() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.55fr] gap-12 lg:gap-16 xl:gap-20 items-center">
 
           {/* ── Left: portrait ── */}
-          <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+          <div className="flex flex-col items-center sm:block relative mx-auto w-full max-w-sm lg:max-w-none">
 
             {/* Corner frame — accent color */}
             <div className="absolute -top-4 -left-4 w-16 h-16 border-l-2 border-t-2 border-accent-500/30 rounded-tl-xl z-10 pointer-events-none" aria-hidden />
@@ -36,24 +36,24 @@ export default function Agents() {
             </div>
 
             {/* Floating stat card — white bg, charcoal text ✓ */}
-            <div className="absolute -bottom-5 -right-3 sm:-right-6 bg-white rounded-xl shadow-panel p-4 sm:p-5 border border-stone-200">
-              <div className="flex gap-5 sm:gap-6">
+            <div className="relative mt-4 w-full sm:absolute sm:mt-0 sm:-bottom-5 sm:-right-6 sm:w-auto bg-white rounded-xl shadow-panel p-4 sm:p-5 border border-stone-200">
+              <div className="flex items-stretch justify-center gap-3 sm:gap-5 lg:gap-6">
                 {trustItems.map((t, i) => (
-                  <div key={t.label} className="flex items-stretch gap-5 sm:gap-6">
-                    <div className="flex flex-col items-center text-center">
+                  <>
+                    <div key={t.label} className="flex flex-col items-center text-center">
                       {/* Accent value — accent-500 on white ✓ */}
                       <span className="font-serif text-xl sm:text-2xl font-bold text-accent-500 leading-none">
                         {t.value}
                       </span>
                       {/* stone-600 on white ✓ */}
-                      <span className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.14em] text-stone-600 whitespace-nowrap">
+                      <span className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.1em] sm:tracking-[0.14em] text-stone-600 max-w-[5rem] sm:max-w-none leading-tight">
                         {t.label}
                       </span>
                     </div>
                     {i < trustItems.length - 1 && (
-                      <div className="w-px self-stretch bg-stone-200" />
+                      <div className="w-px self-stretch bg-stone-200 mx-1 sm:mx-0" />
                     )}
-                  </div>
+                  </>
                 ))}
               </div>
             </div>

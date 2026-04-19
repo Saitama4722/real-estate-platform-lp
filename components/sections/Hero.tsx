@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-between gap-14 lg:gap-12">
 
           {/* ── Left: headline + stats ── */}
-          <div className="lg:w-[54%] xl:w-[52%]">
+          <div className="lg:w-[54%] xl:w-[52%] min-w-0">
 
             {/* Eyebrow */}
             <p className="eyebrow mb-6 flex items-center gap-2.5">
@@ -35,7 +35,7 @@ export default function Hero() {
             </p>
 
             {/* H1 — large Cormorant Garamond, dark charcoal on white */}
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-semibold tracking-tight text-stone-900 leading-[1.05] max-w-[18ch] text-balance opacity-0 animate-[fadeUp_600ms_cubic-bezier(0.16,1,0.3,1)_forwards]">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-semibold tracking-tight text-stone-900 leading-[1.1] max-w-[22ch] text-balance opacity-0 animate-[fadeUp_600ms_cubic-bezier(0.16,1,0.3,1)_forwards]">
               Подберём недвижимость в Краснодаре и Геленджике под вашу задачу
             </h1>
 

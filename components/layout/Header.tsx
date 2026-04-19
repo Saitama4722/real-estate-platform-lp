@@ -29,11 +29,11 @@ export default function Header() {
           : "border-b border-stone-100"
       }`}
     >
-      <div className="container-site flex items-center justify-between gap-6 py-4 sm:py-5">
+      <div className="container-site flex items-center justify-between gap-4 lg:gap-8 py-4 sm:py-5 min-w-0">
 
         {/* Logo */}
-        <a href="#hero" className="flex flex-col min-w-0 cursor-pointer group">
-          <span className="font-serif text-lg sm:text-xl font-semibold tracking-tight text-stone-900 group-hover:text-accent-500 transition-colors duration-200 truncate leading-tight">
+        <a href="#hero" className="flex flex-col shrink-0 cursor-pointer group">
+          <span className="font-serif text-lg sm:text-xl font-semibold tracking-tight text-stone-900 group-hover:text-accent-500 transition-colors duration-200 leading-tight whitespace-nowrap">
             Владимир Балашов
           </span>
           <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-stone-500 mt-0.5">
@@ -42,7 +42,7 @@ export default function Header() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
           {links.map((l) => (
             <a
               key={l.href}
@@ -55,7 +55,7 @@ export default function Header() {
         </nav>
 
         {/* Right actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 shrink-0">
           <a
             href="tel:+79288497980"
             className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-stone-600 hover:text-accent-500 transition-colors duration-200 cursor-pointer"

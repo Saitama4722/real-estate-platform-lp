@@ -16,6 +16,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.ieya.ru'),
   title: "Владимир Балашов — недвижимость в Краснодаре и Геленджике",
   description:
     "Подбор и покупка жилой недвижимости в Краснодаре и Геленджике. Владимир Балашов: сопровождение сделки от запроса до ключей, спокойный разбор рынка юга без лишнего шума.",

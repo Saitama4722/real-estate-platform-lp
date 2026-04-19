@@ -9,21 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Accent — slate blue (Christie's/Sotheby's register)
+        // Accent — deep forest green
         accent: {
-          DEFAULT: "#1B3A5C",
-          50:  "#EEF3F8",
-          100: "#D4E2EF",
-          200: "#A9C5DF",
-          300: "#7EA8CF",
-          400: "#3D6E9E",
-          500: "#1B3A5C",
-          600: "#163150",
-          700: "#112743",
-          800: "#0C1D33",
-          900: "#070E1A",
-          dark: "#112743",
-          light: "#2A5A8C",
+          DEFAULT: "#2D5016",
+          50:  "#EBF2E6",
+          100: "#D1E5C4",
+          200: "#A8CB8A",
+          300: "#7DAF51",
+          400: "#4F8A26",
+          500: "#2D5016",
+          600: "#264512",
+          700: "#1F3810",
+          800: "#17290C",
+          900: "#0D1B06",
+          dark: "#1F3810",
+          light: "#4F8A26",
         },
         // Surface / neutral — warm whites and grays
         stone: {
@@ -113,7 +113,7 @@ const config: Config = {
       },
       backgroundImage: {
         // Accent gradient for CTA buttons
-        "accent-gradient":  "linear-gradient(135deg, #1B3A5C 0%, #2A5A8C 100%)",
+        "accent-gradient":  "linear-gradient(135deg, #2D5016 0%, #4F8A26 100%)",
         // Dark overlays for city cards / hero
         "card-gradient":    "linear-gradient(180deg, rgba(28,28,30,0) 40%, rgba(28,28,30,0.90) 100%)",
         "hero-overlay":     "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 55%, rgba(255,255,255,0) 100%)",
