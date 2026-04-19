@@ -4,8 +4,22 @@
 
 @layer base {
   :root {
-    --font-josefin: "Josefin Sans", system-ui, sans-serif;
-    --font-cinzel:  "Cinzel", Georgia, serif;
+    --font-inter:      "Inter", system-ui, sans-serif;
+    --font-cormorant:  "Cormorant Garamond", Georgia, serif;
+    /* Accent — slate blue */
+    --color-accent:    #1B3A5C;
+    --color-accent-dk: #112743;
+    --color-accent-lt: #2A5A8C;
+    /* Surfaces */
+    --color-bg:        #FFFFFF;
+    --color-bg-alt:    #F8F6F3;
+    --color-bg-dark:   #1C1C1E;
+    /* Text */
+    --color-text:      #1C1C1E;
+    --color-text-muted:#4A4540;
+    --color-text-sub:  #736B62;
+    /* Border */
+    --color-border:    #E5E3E0;
   }
 
   html {
@@ -15,17 +29,19 @@
   }
 
   body {
-    @apply bg-ink-950 text-cream-100 antialiased;
+    background-color: #FFFFFF;
+    color: #1C1C1E;
+    font-family: var(--font-inter);
+    @apply antialiased;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   }
 
   ::selection {
-    @apply bg-gold-400/30 text-white;
+    background-color: rgba(27, 58, 92, 0.15);
+    color: #1C1C1E;
   }
 
-  * {
-    @apply box-border;
-  }
+  * { @apply box-border; }
 }
 
 @layer components {
@@ -34,96 +50,95 @@
   }
 
   .section-padding {
-    @apply py-24 sm:py-28 lg:py-32;
+    @apply py-20 sm:py-24 lg:py-28;
   }
 
-  /* Exaggerated Minimalism: oversized eyebrow with wide tracking */
+  /* ── Eyebrow label ── */
   .eyebrow {
-    @apply text-[10px] font-bold uppercase tracking-[0.35em] text-gold-400;
-    font-family: var(--font-josefin);
+    @apply text-[11px] font-semibold uppercase tracking-[0.25em] text-accent-500;
+    font-family: var(--font-inter);
   }
 
-  /* Large serif headings — Cinzel elegance */
+  /* ── Section heading ── */
   .title-section {
-    @apply font-serif text-4xl sm:text-5xl lg:text-[3.25rem] font-semibold tracking-tight text-white leading-[1.05];
+    @apply font-serif text-4xl sm:text-5xl lg:text-[3rem] font-semibold tracking-tight text-stone-900 leading-[1.08];
   }
 
+  /* ── Body subtitle ── */
   .subtitle-section {
-    @apply mt-5 text-base sm:text-lg text-ink-300 leading-relaxed max-w-2xl;
-    font-family: var(--font-josefin);
-    font-weight: 300;
-    letter-spacing: 0.02em;
+    @apply mt-5 text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl;
   }
 
-  /* Card — deep dark with gold border */
+  /* ── Card ── white, subtle border, shadow on hover */
   .card-elevated {
-    @apply bg-ink-900 rounded-2xl border border-gold-DEFAULT/15
-           shadow-[0_8px_40px_-8px_rgba(0,0,0,0.5)];
+    @apply bg-white rounded-xl border border-stone-200 shadow-card
+           hover:shadow-card-hover transition-shadow duration-300;
   }
 
-  /* Input — dark surface */
+  /* ── Input / select — light surface ── */
   .input-field {
-    @apply w-full rounded-xl border border-ink-700 bg-ink-900/80 px-4 py-3.5
-           text-base text-cream-100 placeholder:text-ink-400
+    @apply w-full rounded-lg border border-stone-300 bg-white px-4 py-3.5
+           text-base text-stone-900 placeholder:text-stone-400
            outline-none transition-all duration-200
-           focus:border-gold-500 focus:ring-4 focus:ring-gold-400/15
-           hover:border-ink-600;
-    font-family: var(--font-josefin);
-    letter-spacing: 0.02em;
+           focus:border-accent-500 focus:ring-2 focus:ring-accent-100
+           hover:border-stone-400;
+    font-family: var(--font-inter);
   }
 
-  /* Primary CTA — gold gradient */
+  /* ── Primary button — slate blue, white text, rounded-lg ── */
   .btn-solid {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5
-           text-sm font-semibold text-white tracking-[0.08em] uppercase
-           transition-all duration-300 cursor-pointer
-           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400;
-    font-family: var(--font-josefin);
-    background: linear-gradient(135deg, #C9943A 0%, #E2AE4F 50%, #B8832E 100%);
-    box-shadow: 0 4px 24px -4px rgba(184,131,46,0.5);
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+           px-7 py-3.5 text-sm font-semibold text-white tracking-wide
+           transition-all duration-200 cursor-pointer
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+           focus-visible:outline-accent-500;
+    font-family: var(--font-inter);
+    background-color: #1B3A5C;
   }
   .btn-solid:hover {
-    background: linear-gradient(135deg, #D4A245 0%, #EDB95A 50%, #C9943A 100%);
-    box-shadow: 0 8px 36px -4px rgba(184,131,46,0.65);
+    background-color: #112743;
+    box-shadow: 0 4px 20px rgba(27, 58, 92, 0.30);
     transform: translateY(-1px);
   }
   .btn-solid:active {
     transform: translateY(0);
+    background-color: #1B3A5C;
+  }
+  /* Disabled state for submit button in Contact */
+  .btn-solid:disabled {
+    background-color: #9CA3AF;
+    box-shadow: none;
+    transform: none;
+    cursor: not-allowed;
   }
 
-  /* Secondary — ghost with gold border */
+  /* ── Outline button — accent border + text, fills on hover ── */
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border bg-transparent
-           px-8 py-3.5 text-sm font-semibold tracking-[0.08em] uppercase
-           transition-all duration-300 cursor-pointer
-           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400;
-    font-family: var(--font-josefin);
-    border-color: rgba(184,131,46,0.5);
-    color: #E2AE4F;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border bg-transparent
+           px-7 py-3.5 text-sm font-semibold tracking-wide
+           transition-all duration-200 cursor-pointer
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+           focus-visible:outline-accent-500;
+    font-family: var(--font-inter);
+    border-color: #1B3A5C;
+    color: #1B3A5C;
   }
   .btn-outline:hover {
-    background: linear-gradient(135deg, #C9943A 0%, #E2AE4F 50%, #B8832E 100%);
-    border-color: transparent;
-    color: #ffffff;
-    box-shadow: 0 4px 24px -4px rgba(184,131,46,0.5);
+    background-color: #1B3A5C;
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(27, 58, 92, 0.25);
     transform: translateY(-1px);
   }
   .btn-outline:active {
     transform: translateY(0);
   }
 
-  /* Teal CTA variant */
-  .btn-teal {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           px-8 py-3.5 text-sm font-semibold text-white tracking-[0.08em] uppercase
-           transition-all duration-300 cursor-pointer;
-    font-family: var(--font-josefin);
-    background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%);
-    box-shadow: 0 4px 24px -4px rgba(20,184,166,0.4);
-  }
-  .btn-teal:hover {
-    box-shadow: 0 8px 36px -4px rgba(20,184,166,0.55);
-    transform: translateY(-1px);
+  /* ── Ghost / white variant for dark sections ── */
+  .btn-ghost-white {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/30
+           bg-white/10 px-7 py-3.5 text-sm font-semibold text-white tracking-wide
+           transition-all duration-200 cursor-pointer hover:bg-white/20 hover:border-white/50;
+    font-family: var(--font-inter);
   }
 
   .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -131,26 +146,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
-  /* Gold rule divider */
-  .gold-rule {
-    @apply block h-px w-12 bg-gold-DEFAULT/50;
-  }
-
-  /* Section label — used above headings */
-  .section-tag {
-    @apply inline-flex items-center gap-3 mb-5;
-  }
-  .section-tag::before {
-    content: "";
-    @apply block h-px w-8 bg-gold-400/60;
-  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
 
   .line-clamp-2 {
     display: -webkit-box;
@@ -166,32 +165,31 @@
   }
 }
 
-/* Native select arrow */
+/* ── Select arrow — accent blue ── */
 select.input-field {
   -webkit-appearance: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E2AE4F' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231B3A5C' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 44px;
+  background-position: right 14px center;
+  padding-right: 40px;
 }
 
-/* Scrollbar — dark luxury */
+/* ── Scrollbar — warm light ── */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #070A14; }
-::-webkit-scrollbar-thumb { background: #374050; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #B8832E; }
+::-webkit-scrollbar-track { background: #F8F6F3; }
+::-webkit-scrollbar-thumb { background: #C4BAB0; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #1B3A5C; }
 
-/* ── Keyframe Animations ──────────────────────────────────── */
-
-@keyframes heroDriftLight {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  100% { transform: translate3d(8%, 4%, 0) scale(1.06); }
+/* ── Keyframe Animations ── */
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes heroDriftDark {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  100% { transform: translate3d(-8%, -4%, 0) scale(1.06); }
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes parallaxSlow {
@@ -204,38 +202,17 @@ select.input-field {
   100% { transform: translate3d(-4%, 0, 0); }
 }
 
-@keyframes parallaxFast {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-7%, 0, 0); }
-}
-
-/* Gold shimmer pulse on stat numbers */
-@keyframes goldPulse {
-  0%, 100% { text-shadow: 0 0 20px rgba(184,131,46,0); }
-  50%       { text-shadow: 0 0 30px rgba(226,174,79,0.4); }
-}
-
-.gold-pulse {
-  animation: goldPulse 3s ease-in-out infinite;
-}
-
-/* Slow spin for decorative rings */
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .motion-safe\:animate-\[heroDriftDark_45s_ease-in-out_infinite_alternate\],
-  .motion-safe\:animate-\[heroDriftLight_35s_ease-in-out_infinite_alternate\],
-  .motion-safe\:animate-\[parallaxSlow_50s_linear_infinite_alternate\],
-  .motion-safe\:animate-\[parallaxMid_40s_ease-in-out_infinite_alternate\] {
-    animation: none !important;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   COPY-PROTECTION LAYER
+   COPY-PROTECTION LAYER  (DO NOT MODIFY)
    ───────────────────────────────────────────────────────────────────────────── */
 
 .protected-content {
