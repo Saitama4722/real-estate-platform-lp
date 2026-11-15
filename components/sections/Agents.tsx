@@ -81,8 +81,8 @@ export default function Agents() {
 
             {/* CTAs */}
             <div className="mt-10 flex flex-wrap items-center gap-3">
-              <a href="tel:+79288497980" className="btn-solid cursor-pointer">
-                +7 928 849-79-80
+              <a href="tel:+79283330837" className="btn-solid cursor-pointer">
+                +7 928 333-08-37
               </a>
               <a href="#contact" className="btn-outline cursor-pointer">
                 Оставить заявку

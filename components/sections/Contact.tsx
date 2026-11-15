@@ -238,14 +238,14 @@ export default function Contact() {
 
             {/* Phone */}
             <a
-              href="tel:+79288497980"
+              href="tel:+79283330837"
               className="group mt-10 inline-flex flex-col gap-1"
             >
               <span className="text-xs font-bold uppercase tracking-widest text-white/50">
                 Телефон
               </span>
               <span className="text-3xl sm:text-[2.2rem] font-bold text-white group-hover:text-accent transition-colors duration-200 tracking-tight">
-                +7 928 849-79-80
+                +7 928 333-08-37
               </span>
             </a>
 

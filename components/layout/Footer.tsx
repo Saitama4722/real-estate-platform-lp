@@ -153,8 +153,8 @@ export default function Footer() {
                 {/* white/35 on dark ✓ */}
                 <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/35 mb-2">Телефон</p>
                 {/* white on dark ✓ */}
-                <a href="tel:+79288497980" className="font-serif text-lg font-semibold text-white hover:text-stone-300 transition-colors duration-200 cursor-pointer">
-                  +7 928 849-79-80
+                <a href="tel:+79283330837" className="font-serif text-lg font-semibold text-white hover:text-stone-300 transition-colors duration-200 cursor-pointer">
+                  +7 928 333-08-37
                 </a>
               </div>
               <div>

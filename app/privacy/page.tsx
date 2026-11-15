@@ -243,8 +243,8 @@ export default function PrivacyPage() {
                 </a>
               </li>
               <li><span className="font-semibold text-brand-900">Телефон:</span>{" "}
-                <a href="tel:+79288497980" className="text-accent underline hover:text-accent-dark transition-colors">
-                  +7 928 849-79-80
+                <a href="tel:+79283330837" className="text-accent underline hover:text-accent-dark transition-colors">
+                  +7 928 333-08-37
                 </a>
               </li>
             </ul>

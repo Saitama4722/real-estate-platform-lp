@@ -178,7 +178,7 @@ vercel --prod
 **Vladimir Balashov** — private realtor, Krasnodar & Gelendzhik
 
 - Telegram: [@VadikQA](https://t.me/VadikQA)
-- Phone: +7 928 849-79-80
+- Phone: +7 928 333-08-37
 
 ---
 

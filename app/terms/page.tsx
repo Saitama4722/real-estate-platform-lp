@@ -210,10 +210,10 @@ export default function TermsPage() {
               </a>{" "}
               &nbsp;·&nbsp;{" "}
               <a
-                href="tel:+79288497980"
+                href="tel:+79283330837"
                 className="text-accent underline hover:text-accent-dark transition-colors"
               >
-                +7 928 849-79-80
+                +7 928 333-08-37
               </a>
             </p>
           </div>
