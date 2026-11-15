@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import CookieBanner from "@/components/layout/CookieBanner";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -151,6 +152,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
