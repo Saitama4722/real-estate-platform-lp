@@ -57,6 +57,21 @@ export default function Footer() {
         {/* ── Top brand bar ── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 py-8 border-b border-white/[0.08]">
 
+          {/* Brand logo — white mono on dark ✓ */}
+          <a href="/" className="shrink-0 cursor-pointer opacity-90 hover:opacity-100 transition-opacity duration-200" aria-label="Centreal — на главную">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/logo-white.svg"
+              alt="Centreal — недвижимость Краснодара и Геленджика"
+              width={155}
+              height={44}
+              loading="lazy"
+              className="h-10 w-auto"
+            />
+          </a>
+
+          <div className="hidden sm:block w-px h-9 bg-white/10" />
+
           {/* Logo — white on dark ✓ */}
           <a href="#hero" className="flex flex-col cursor-pointer group">
             <span className="font-serif text-xl font-semibold tracking-tight text-white group-hover:text-stone-300 transition-colors duration-200">

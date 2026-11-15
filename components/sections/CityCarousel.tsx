@@ -4,13 +4,13 @@ const cities = [
     name: "Краснодар",
     desc: "Город для жизни и инвестиций",
     count: "Квартиры, дома, новостройки",
-    image: "/images/cities/krd1.jfif",
+    image: "/images/cities/krd1.webp",
   },
   {
     name: "Геленджик",
     desc: "Недвижимость у моря",
     count: "Апартаменты, дома, видовые объекты",
-    image: "/images/cities/gelen1.jpg",
+    image: "/images/cities/gelen1.webp",
   },
 ];
 

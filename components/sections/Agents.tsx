@@ -1,7 +1,7 @@
 // About realtor section — Владимир Балашов
 // TEMPORARY IMAGE — replace with real portrait photo when available
 
-const PORTRAIT = "/images/agent/photo_agent.jpg";
+const PORTRAIT = "/images/agent/photo_agent.webp";
 
 const trustItems = [
   { value: "120+",      label: "Закрытых сделок" },

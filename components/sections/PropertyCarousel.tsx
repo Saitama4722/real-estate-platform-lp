@@ -10,7 +10,7 @@ const listings = [
     rooms: "3 комн.",
     area: "78 м²",
     price: "от 8 500 000 ₽",
-    image: "/images/properties/kvartira-1.jpg",
+    image: "/images/properties/kvartira-1.webp",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const listings = [
     rooms: "2 комн.",
     area: "52 м²",
     price: "от 12 900 000 ₽",
-    image: "/images/properties/dom_1.jpg",
+    image: "/images/properties/dom_1.webp",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const listings = [
     rooms: "5 комн.",
     area: "180 м²",
     price: "от 19 500 000 ₽",
-    image: "/images/properties/dom_2.jpg",
+    image: "/images/properties/dom_2.webp",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const listings = [
     rooms: "1 комн.",
     area: "38 м²",
     price: "от 6 700 000 ₽",
-    image: "/images/properties/zhk-akvatoriya.jpg",
+    image: "/images/properties/zhk-akvatoriya.webp",
   },
 ];
 
